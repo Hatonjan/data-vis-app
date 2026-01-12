@@ -1,0 +1,75 @@
+<!--This code is part of the data-viz template file with minor 
+modification to add tow more visualizations  -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+
+    <title>Data visualization App</title>
+
+    <!-- P5.js libraries -->
+    <script src="lib/p5.dom.min.js"></script>
+    <script src="lib/p5.min.js"></script>
+  
+    <!-- CSS files -->
+    <link rel="stylesheet" href="styles/leaflet.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Leaflet libraries -->
+    <script src="lib/leaflet/leaflet-src.esm.js.map"></script>
+    <script src="lib/leaflet/leaflet-src.js.map"></script>
+    <script src="lib/leaflet/leaflet-src.esm.js"></script>
+    <script src="lib/leaflet/leaflet-src.js"></script>
+    <script src="lib/leaflet/leaflet.js.map"></script>
+    <script src="lib/leaflet/leaflet.js"></script>
+
+    <!-- Main sketch file -->
+    <script src="sketch.js"></script>
+
+    <!-- Main visualization files -->
+    <script src="visualizations/scatter-plot/car-price-by-gasoline-consumption.js"></script>
+    <script src="visualizations/donut-chart/alcohol-consumption-by-race.js"></script>
+    <script src="visualizations/multiple-line-chart/nutrients-1974-2016.js"></script>
+    <script src="visualizations/interactive-line-chart/climate-change.js"></script>
+    <script src="visualizations/choropleth-map/usa-population-density.js"></script>
+    <script src="visualizations/bar-chart/europe-diversity-gender.js"></script>
+    <script src="visualizations/bubble-chart/food-consumption.js"></script>
+    <script src="visualizations/waffle-chart/eating-behavior.js"></script>
+    <script src="visualizations/bubble-chart/bubble.js"></script>
+    <script src="visualizations/waffle-chart/waffle.js"></script>
+    <script src="visualizations/waffle-chart/box.js"></script>      
+
+    <!-- Add extra scripts below -->
+    <script src="data/alcohol-consumption/article-information.js"></script>
+    <script src="visualizations/donut-chart/donut-chart.js"></script>
+    <script src="data/geospatial-data/state-data.js"></script>
+    <script src="helpers/helper-functions.js"></script>
+    <script src="helpers/home-screen.js"></script>
+    <script src="helpers/gallery.js"></script>
+  </head>
+  
+  <body> 
+    <!-- Add the header to the application -->
+    <header>
+      <h1> 
+        <a href="index.html">
+          <img 
+            src="lib/leaflet/images/mjs.jpg" 
+            alt="My personal logo" 
+            class="header-img"/>
+          Data Visualization App
+          </a>
+      </h1>
+    </header>
+    <!-- Display the visualizations in the application window -->
+    <main id="app" class="container">
+      <nav>
+        <ul id="visuals-menu"></ul>
+      </nav>
+      <div id="map"></div>
+    </main>
+  </body>
+</html>  
