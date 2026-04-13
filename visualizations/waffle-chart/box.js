@@ -1,5 +1,3 @@
-/* This code was written following the instructions from the 
-video lecture from week 11 adapted to a constructor function*/
 function Box(x, y, width, height, category) {
     // Variables
     var x = x;
@@ -15,7 +13,7 @@ function Box(x, y, width, height, category) {
             
             // Hover effect
             drawBox();
- 
+
             // Display the data 
             return this.category.name;
         }
@@ -26,15 +24,13 @@ function Box(x, y, width, height, category) {
         drawBox(7);
     };
 
-    /* The code below is my original work and not 
-       part of code from the video lecture */
     function drawBox(sw) {
         push();
         // Draw the waffle squares
         fill(category.color);
         strokeWeight(sw);
         stroke(backgroundColor);
-        rect(x, y, width, height, 6);
+        rect(x, y, width, height, 2);
         pop();
     }
     /* End of my original work */

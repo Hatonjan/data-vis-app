@@ -1,7 +1,3 @@
-/* This code is part of the data-viz template file. Some 
-modification has been made to adjust the visual appearance 
-of the visualization, and the data has also been changed*/
-
 function CarPriceByFuelConsumption() {
   // Name for the visualization to appear in the menu bar.
   this.name = 'Car Price by Gasoline Consumption';
@@ -73,15 +69,10 @@ function CarPriceByFuelConsumption() {
           const sColor = 120 // Set the stroke color of the data points 
 
       // Draw an ellipse for each point.
-      /* The b variable as an argument in the fill() function, 
-       give to every bubble a color based in the price value */
       push();
       stroke(sColor, sColor, sColor, sColor);
       fill(23, 64, b, 150); 
       ellipse(xPos, yPos, dotSize);
-
-      /* The code below is my original work and not 
-       part of code from the data-viz template */
 
       /* Draw a line to following the upward trend 
       to help guide users in interpreting the data */
@@ -89,9 +80,6 @@ function CarPriceByFuelConsumption() {
       stroke("#800080");
       line(100, 425, 920, 102);
       pop();
-
-      /* The code below is my original work and not 
-       part of code from the data-viz template */
 
       // Add a title to the canvas
       this.drawTitle();
@@ -104,7 +92,7 @@ function CarPriceByFuelConsumption() {
 		if(mouseX < this.pad || mouseY < this.pad || mouseY > height) {
 			// Draw the information box
 			fill(34,34,60, 150);
-			rect(width - this.pad*2.8, height- this.pad*1.6, 180, 50, 20);	
+			rect(width - this.pad*2.8, height- this.pad*1.6, 180, 50, 5);	
 				
 			// Display text 
 			fill(245);
@@ -146,6 +134,7 @@ function CarPriceByFuelConsumption() {
 
         // Display the Car price
         fill(200);
+        textFont(goldman);
         textSize(15);
         textAlign(RIGHT, BOTTOM);
         text(carPrice, this.pad - 10, this.pad + (yGrid * j));
@@ -154,7 +143,7 @@ function CarPriceByFuelConsumption() {
         textAlign(CENTER,CENTER);
         text("$", this.pad/5, height/2);
         text("USD", this.pad/5, height/2 + 15);
-       
+
         // Calculate the percentage gap
         const literPerKilometer = (6.50 + (1.2777 * i)).toFixed(2);
         // Display the percentage gap
@@ -179,11 +168,11 @@ function CarPriceByFuelConsumption() {
       // Draw the background of the data display 
       noStroke(); 
       fill(34,34,60, 150);   
-      rect(width - this.pad*2.8, height- this.pad*1.6, 185, 50, 20);	
+      rect(width - this.pad*2.8, height- this.pad*1.6, 185, 40, 5);	
 
       // Display the car make wen mouse is over the data point
       fill(245);
-      textSize(25);
+      textSize(20);
       textAlign(LEFT ,TOP);
       // text(message, width - this.pad*2.7, height- this.pad);
       text(message, 

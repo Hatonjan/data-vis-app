@@ -1,9 +1,12 @@
-/* This code is part of the data-viz template file with some additions*/
 
-// Global variable to store the gallery object. The gallery object is
-// a container for all the visualizations.
-const backgroundColor = 34;
+// const backgroundColor = 34;
+const backgroundColor = 15;
 let gallery;
+let goldman;
+
+function preload() {
+  goldman = loadFont('./assets/fonts/Goldman/Goldman-Regular.ttf');
+}
 
 function setup() {
   // Create a canvas to fill the content div from index.html.
@@ -14,29 +17,20 @@ function setup() {
   gallery = new Gallery(); 
 
   // Add the visualization objects here.
+  gallery.addVisual(new PopulationDensityUS());
+  gallery.addVisual(new EatingBehavior());
   gallery.addVisual(new AlcoholConsumptionByRace());
-  gallery.addVisual(new EuropeDiversityGender());
   gallery.addVisual(new CarPriceByFuelConsumption());
+  gallery.addVisual(new EuropeDiversityGender());
   gallery.addVisual(new NutrientsTimeSeries());
   gallery.addVisual(new ClimateChange());
-
-  /* The code below is my original work and not 
-       part of code from the data-viz template */    
-  gallery.addVisual(new EatingBehavior());
-  gallery.addVisual(new PopulationDensityUS());
-  // End my original work
+  
+  // Set PopulationDensityUS as the default visualization
+  gallery.selectVisual('mapVis');
+  
 }
 
 function draw() {
   background(backgroundColor);
-  if(gallery.selectedVisual != null) {
-    gallery.selectedVisual.draw();
-  }
-  /* The code below is my original work and not 
-      part of code from the data-viz template */ 
-  else {
-      // Display the home screen
-      new HomeScreen(); 
-      // End of my original work 
-  }
+  gallery.selectedVisual.draw();
 }

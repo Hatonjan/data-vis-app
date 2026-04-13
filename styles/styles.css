@@ -1,18 +1,42 @@
-/* The code bellow is an original addition 
-    to he data-viz template */
+/* Fonts */
+@font-face {
+    font-family: 'Goldman';
+    src: url('../assets/fonts/Goldman/Goldman-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Goldman';
+    src: url('../assets/fonts/Goldman/Goldman-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --background: #0a0a0a;
+    --text-color: #E6E6E6;
+    --subtitle-color: #858585;
+}
+
+body {
+    font-family: 'Goldman';
+    background: var(--background);
+}
 
 /* Attributes to enhance the header */
 header { 
-    color: rgb(245, 245, 245);
+    color: var(--text-color);
     padding-left: 10px;
-    max-width: 1224px;
-    font-size: 14px;    
+    font-size: 1.5rem;    
+    letter-spacing: 2px;
+    padding-left: 2rem ;
 }
 
 header a {
     font-size: 3rem;
     text-decoration: none;
-    color: whitesmoke;
+    color: var(--text-color);
 }
 
 header img {
@@ -24,30 +48,16 @@ header img {
 }
 /* End of the header attributes*/
 
-/* End of my original work */
-
-/* This code is part of the data-viz template */
-body {
-    font-family: sans-serif;
-    background: rgb(34, 34, 34); 
-}
-
 .menu-item {
-    width: 310px;
-    height: 31px;
+    color: var(--subtitle-color);
+    font-size: 1.25rem;
     list-style-type: none;
-    padding-top: 10px;
-
-    /* The code bellow is an original addition 
-    to he data-viz template */
-    /* Attributes to enhance the menu */
-    color: rgb(200, 200, 200);
-    margin-bottom: 20px;
-    margin-right: 15px;
-    text-align: center;
-    border-radius: 5px;
-    font-size: 18px;
-    /* End of my original work */
+    width: 22vw;
+    height: auto;
+    padding: 1rem;
+    margin: .25rem 1rem 0 0;
+    border: 1px solid #17337c;
+    border-radius: 2px;    
 }
 
 .container {
@@ -55,71 +65,53 @@ body {
 }
 
 .hover {
-    background: #1E90FF;
-
-    /* The code bellow is an original addition 
-    to he data-viz template*/
-    /* Change the text to bold wen the 
-    mouse pointer is inside the box */
-    color:rgb(245, 245, 245);
+    color: var(--text-color);
     font-weight: bold;
-    /* End of my original work */
+    transform: translateX(-0.875rem);
 }
 
 .selected {
-    background: #a5126f;
-
-    /* The code bellow is an original addition 
-    to he data-viz template*/
-    /* Attributes to enhance the menu */
-    color: rgb(112, 162, 227);
-    color: rgb(245, 245, 245);
+    color: var(--text-color);
     font-weight: bold;
-    /* End of my original work */
+    transform: translateX(-0.5rem);
 }
 /* End of the code of the data-viz template */
 
-/*The code below from line 48 to 80 is bean added following 
-the leaflet tutorial for the choropleth map*/
-
 /* Displays the map at 100% of the data visualization window */
 #map {
-    background: rgb(34, 34, 34);
+    background: var(--background);
     height: 100%;
 }
 
-/* Define the visual parameters for the information 
-window while displaying the map */
 .info {
-    font: 20px/16px Arial, Helvetica, sans-serif;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    background: rgba(34,34,60,0.9);
+    font: 20px/16px 'Goldman';
+    box-shadow: 0 0 5px #373636;
+    background: var(--background)  ;
     padding: 15px 20px;
     border-radius: 5px;
-    color: #F5F5F5;
+    color: var(--text-color);
 }
 
 .title {
-    font: 25px/20px Arial, Helvetica, sans-serif;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    background: rgba(34,34,60,0.9);
+    font: 25px/20px 'Goldman';
+    box-shadow: 0 0 5px #373636;
+    background: var(--background);
     transform: translate(-330px);
     border-radius: 5px;
     padding: 10px 50px;
-    color: #F5F5F5;
+    color: var(--text-color);
 }
 
 .title h4 {
-    color: #F5F5F5;
+    color: var(--text-color);
     margin: 0 0 5px;
 }
 /* End of the information window display parameters */
 
-/* Define the parameters for the legend window 
-while displaying the map */
+/* Define the parameters for the legend */
 .legend {
     line-height: 18px;
-    color: #F5F5F5;
+    color: var(--subtitle-color);
 }
 
 .legend i {

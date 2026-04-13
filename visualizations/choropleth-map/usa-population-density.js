@@ -1,12 +1,3 @@
-/*
-The code for the constructor function Map() was written by following the Interactive Choropleth Map tutorial 
-from the leaflet website "https://leafletjs.com/examples/choropleth/" and analyzing the source code for the 
-leaflet map example "https://leafletjs.com/examples/choropleth/example.html". I also add the necessary 
-CSS code following the leaflet instructions to display the legend and the information window. 
-The code was then adapted into a constructor function by me to display the data in the data visualization 
-window of the web application.     
-*/
-
 function PopulationDensityUS() {
       // Name for the visualization to appear in the menu bar.
     this.name = 'USA Population Density';
@@ -30,19 +21,13 @@ function PopulationDensityUS() {
         // Set the coordinates for the map view
         map = L.map('map').setView([37.8, -96], 4);
 
-        /* The attribution variable is required by the OpenStreetMap Foundation 
-        when using the Leaflet library. However, the absence of the information 
-        contained in the URL does not affect the application's performance, 
-        which is why the documentation is not included as a local file */  
+        /* The attribution variable is required by the OpenStreetMap Foundation  */  
         let attribution = 
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
 
-        // API for the tiles to display the data in a world map   
-        let tiles = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+        // URL for the tiles to display the data in a world map dark tiles
+        let tiles = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
 
-        /* Replace the tiles wit a image mimicking the ocean to comply wit the 
-        project external resources rule */
-        // let tiles = './lib/leaflet/images/sea0.png'; 
         let maxZoom = 19;
 
         // Initiate the map tiles and set up the zoom level
@@ -60,14 +45,14 @@ function PopulationDensityUS() {
     
     getColor = function(d) {
         // Color pallet 
-        return  d > 1000 ?  '#C71585': 
-                d > 500  ?  '#800080':      
-                d > 200  ?  '#8A2BE2':  
-                d > 100  ?  '#0000FF':
-                d > 50   ?  '#4169E1':
-                d > 20   ?  '#1E90FF':
-                d > 10   ?  '#00BFFF':
-                            '#87CEFA'
+        return  d > 1000 ?  '#C71585DD': 
+                d > 500  ?  '#800080DD':      
+                d > 200  ?  '#8A2BE2DD':  
+                d > 100  ?  '#0000FFDD':
+                d > 50   ?  '#4169E1DD':
+                d > 20   ?  '#1E90FFDD':
+                d > 10   ?  '#00BFFFDD':
+                            '#87CEFADD'
     };
     
     style = function(feature) {
@@ -76,7 +61,7 @@ function PopulationDensityUS() {
             fillColor: getColor(feature.properties.density),
             weight: 2,
             opacity: 1,
-            color: '#000000',
+            color: '#323232',
             dashArray: '2',
             fillOpacity: 0.7
         }; 
@@ -106,8 +91,8 @@ function PopulationDensityUS() {
         const layer = e.target;
 
         layer.setStyle({
-            weight: 5,
-            color: '#F5F5F5',
+            weight: 3,
+            color: '#dadada',
             dashArray: '',
             fillOpacity: 0.7
         });

@@ -34,7 +34,6 @@ function DonutChart(x, y, diameter) {
     }
 
     // https://p5js.org/examples/form-pie-chart.html
-
     let angles = this.getRadians(data);
     let lastAngle = 0;
     let color;
@@ -59,7 +58,6 @@ function DonutChart(x, y, diameter) {
 
       lastAngle += angles[i];
 
-      // console.log(lastAngle)
     }
 
     if (title) {
@@ -81,12 +79,10 @@ function DonutChart(x, y, diameter) {
 
     noStroke();
     fill('220');
-    textSize(25);
+    textSize(20);
     textAlign('left', 'center');
     text(label, x + boxWidth + 10, y + boxHeight*4.5 );
 
-    /* The code below is my original work and not 
-       part of code from the data-viz template */   
     // Display the Percentage per label 
     const percentage = (angles * 100 / TWO_PI).toFixed(2) + '%'
     text(percentage, x + boxWidth*7, y + boxHeight*4.5);

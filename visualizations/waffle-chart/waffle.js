@@ -114,6 +114,7 @@ function Waffle(
                 noStroke()
                 textSize(20);
                 textAlign(CENTER, BOTTOM,);
+                textFont(goldman);
                 text(columnHeading, x + waffleWidth/2, y - 10);                
                 pop();
                 // End of my original work
@@ -137,15 +138,15 @@ function Waffle(
                         let percentage = ((boxes[i][j].category.count / 305) * 100).toFixed(2);
 
                         /* Shift the data to the left of the screen as the mouse move 
-                           to the right of the screen to aloud data to be always readable.*/
+                        to the right of the screen to aloud data to be always readable.*/
                         const mouseXPos = (mouseX * 0.85);
                         
                         push();
                         // Draw the background of the data display 
                         noStroke(); 
                         fill(34,34,60,180);  
-                        rect(mouseXPos, mouseY - 17, tWidth + 90, 24, 5);
-                         
+                        rect(mouseXPos, mouseY + 17, tWidth + 90, 24, 5);
+                        
                         // Displays the box type wen the mouse is over the box
                         fill(225);
                         textSize(20);
@@ -153,7 +154,8 @@ function Waffle(
                         text(
                             mouseOver + ": " + percentage + "%", 
                             mouseXPos, 
-                            mouseY - 15);
+                            mouseY + 15);
+                        textFont(goldman);
                         pop();
                         break;
                     }
@@ -162,17 +164,15 @@ function Waffle(
         }
     };
 
-     /* The code below is my original work and not 
-      part of code from the data-viz template */ 
     this.waffleLegend = function() {
 
         push();
         fill(34, 34, 60, 150);
         rect(waffleWidth * 3.6, 
             (waffleHeight * 1.7), 
-            waffleWidth*1.1, 
+            waffleWidth*1.25, 
             waffleHeight* 1.1, 
-            10
+            2
         );
         pop();
 
@@ -187,13 +187,14 @@ function Waffle(
                 (waffleHeight * 1.74) + (i * 35), 
                 boxSize, 
                 boxSize, 
-                5
+                2
             );
 
             // Display the data type
             fill(200);
             noStroke();
-            textSize(20); 
+            textSize(18); 
+            textFont(goldman);
             textAlign(LEFT, BOTTOM);
             text(categories[i].name, 
                 waffleWidth * 3.8, 
@@ -214,6 +215,7 @@ function Waffle(
         textSize(25);
         textAlign(CENTER, CENTER);
         text(title, titleX, titleY);
+        textFont(goldman);
         pop();
     };
     // End of my original work

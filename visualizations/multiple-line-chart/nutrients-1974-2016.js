@@ -1,7 +1,3 @@
-/* This code is part of the data-viz template file and has been 
-modified, following the instructions from topic 5 "Extending the 
-data visualizer: existing data sources"  */
-
 function NutrientsTimeSeries() {
   // Name for the visualization to appear in the menu bar.
   this.name = 'Nutrients: 1974-2016';
@@ -215,7 +211,7 @@ function NutrientsTimeSeries() {
 
     // Draw the legend box
     fill(34, 34, 60);
-    rect(legendX, legendY, legendSize, legendSize / 1.5, 20);
+    rect(legendX+20, legendY, legendSize, legendSize / 1.5, 5);
 
     // Iterates trough the data to get the nutrient values
     for(let i = 0; i < this.data.getRowCount(); i ++) {
@@ -225,12 +221,13 @@ function NutrientsTimeSeries() {
       // Draw the list of the nutrient values 
       fill(245);
       textSize(15);
+      textFont(goldman);
       textAlign(LEFT, TOP);
       text(legend, legendX + marginSize * 2, (legendY + 5) + i * 20);
 
       // Draw the different color boxes 
       fill(this.colors[i])
-      rect(legendX + marginSize, (legendY + 5) + i * 20, boxSize, boxSize, 5);
+      rect(legendX + marginSize, (legendY + 5) + i * 20, boxSize, boxSize, 2);
     }
   };
   // End of my original work

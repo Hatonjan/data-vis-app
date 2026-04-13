@@ -38,7 +38,7 @@ function AlcoholConsumptionByRace() {
     // Create a select DOM element.
     this.select = createSelect(); 
     // Set select position.
-    this.select.position(400, 150); 
+    this.select.position(450, 150); 
 
     for(let i = 1; i < this.data.getColumnCount(); i++) {
       // Fill the options with all company names.
@@ -111,6 +111,7 @@ function AlcoholConsumptionByRace() {
       // Display the data name on the center of the chart 
       fill(245);
       textSize(20);
+      textFont(goldman);
       textAlign(CENTER,CENTER);
       text(
         dataName, 
