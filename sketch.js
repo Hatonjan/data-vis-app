@@ -1,5 +1,3 @@
-
-// const backgroundColor = 34;
 const backgroundColor = 15;
 let gallery;
 let goldman;
@@ -11,7 +9,7 @@ function preload() {
 function setup() {
   // Create a canvas to fill the content div from index.html.
   const c = createCanvas(1024, 576);
-  c.parent('map');
+  c.parent('visualization-container');
 
   // Create a new gallery object.
   gallery = new Gallery(); 

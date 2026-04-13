@@ -27,24 +27,14 @@ body {
 /* Attributes to enhance the header */
 header { 
     color: var(--text-color);
-    padding-left: 10px;
-    font-size: 1.5rem;    
     letter-spacing: 2px;
-    padding-left: 2rem ;
+    padding:.5rem 2rem ;
 }
 
 header a {
     font-size: 3rem;
     text-decoration: none;
     color: var(--text-color);
-}
-
-header img {
-    vertical-align: middle;
-    border-radius: 5px;
-    margin-right: 10px;
-    height: 50px;
-    width: 50px;
 }
 /* End of the header attributes*/
 
@@ -78,7 +68,7 @@ header img {
 /* End of the code of the data-viz template */
 
 /* Displays the map at 100% of the data visualization window */
-#map {
+#visualization-container {
     background: var(--background);
     height: 100%;
 }

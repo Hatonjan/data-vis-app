@@ -19,7 +19,7 @@ function PopulationDensityUS() {
     
     this.setup = function() {
         // Set the coordinates for the map view
-        map = L.map('map').setView([37.8, -96], 4);
+        map = L.map('visualization-container').setView([37.8, -96], 4);
 
         /* The attribution variable is required by the OpenStreetMap Foundation  */  
         let attribution = 
